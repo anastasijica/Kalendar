@@ -1,0 +1,29 @@
+<html lang="en">
+    <head>
+        <title>Kalendar</title>
+        <meta charset="utf-8" />
+        <link href="./main.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const calendarEl = document.getElementById('kalendar');
+                const calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        start: 'prevYear,nextYear',
+                        center: 'title',
+                        end: 'today prev,next'
+                    },
+                    dateClick: function(info) {
+                        alert('kliknuo na datum ' + info.dateStr);
+                    }
+                });
+                calendar.render();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="kalendar"></div>
+    </body>
+</html>
